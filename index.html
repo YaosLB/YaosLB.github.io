@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oscar Legros Borguñó | Google Ads & AI Automation</title>
+<meta name="description" content="Google Ads specialist (Google Partner) and AI automation builder. Paid media, conversion tracking, n8n and Python automations. Native French, Spanish, English and Catalan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f5f7fb;
+    --ink: #0f1a2e;
+    --ink-2: #44506a;
+    --line: #e3e8f1;
+    --accent: #1a56db;
+    --accent-soft: #e8efff;
+    --green: #0e7a4f;
+    --green-soft: #e3f5ec;
+    --amber: #8a5a00;
+    --amber-soft: #fdf1d8;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+  .nav-links { display: flex; gap: 24px; font-size: 15px; }
+  .nav-links a { color: var(--ink-2); }
+  @media (max-width: 640px) { .nav-links { display: none; } }
+
+  /* Hero */
+  .hero { padding: 80px 0 56px; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 600;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 5px 12px; border-radius: 99px; margin-bottom: 20px;
+  }
+  h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.1; letter-spacing: -.03em; margin: 0 0 18px; }
+  .lead { font-size: 19px; color: var(--ink-2); max-width: 720px; margin: 0 0 28px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 10px;
+    font-weight: 600; font-size: 15px; border: 1px solid var(--line); color: var(--ink);
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { text-decoration: none; filter: brightness(.96); }
+  .langs { margin-top: 26px; font-size: 14px; color: var(--ink-2); }
+  .langs b { color: var(--ink); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+  .stat { background: var(--bg-soft); border-radius: var(--radius); padding: 20px; }
+  .stat .n { font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
+  .stat .l { font-size: 14px; color: var(--ink-2); }
+  @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  section.soft { background: var(--bg-soft); }
+  h2 { font-size: 30px; letter-spacing: -.02em; margin: 0 0 8px; }
+  .sub { color: var(--ink-2); margin: 0 0 32px; max-width: 680px; }
+
+  /* Services */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .grid3 { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  .icon {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft);
+    display: grid; place-items: center; margin-bottom: 14px; font-size: 20px;
+  }
+
+  /* Projects */
+  .projects { display: grid; gap: 20px; }
+  .project {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; display: grid; grid-template-columns: 1fr 260px; gap: 28px;
+  }
+  @media (max-width: 860px) { .project { grid-template-columns: 1fr; } }
+  .project h3 { margin: 0 0 4px; font-size: 21px; letter-spacing: -.01em; }
+  .tagline { color: var(--ink-2); margin: 0 0 14px; }
+  .project ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; }
+  .project li { margin-bottom: 6px; }
+  .meta { font-size: 14px; }
+  .meta .k { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); font-weight: 600; margin: 0 0 6px; }
+  .meta .block { margin-bottom: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; background: var(--bg-soft); border: 1px solid var(--line); padding: 3px 9px; border-radius: 99px; }
+  .status { display: inline-block; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 99px; }
+  .status.live { color: var(--green); background: var(--green-soft); }
+  .status.wip { color: var(--amber); background: var(--amber-soft); }
+
+  /* Experience */
+  .timeline { display: grid; gap: 14px; }
+  .job { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .job:last-child { border-bottom: 0; }
+  .job .when { color: var(--ink-2); font-size: 14px; }
+  .job h3 { margin: 0 0 4px; font-size: 17px; }
+  .job p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  @media (max-width: 640px) { .job { grid-template-columns: 1fr; gap: 4px; } }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
+  .skills .card h3 { font-size: 15px; margin-bottom: 12px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 72px 0; }
+  .contact .btns { justify-content: center; }
+  footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--ink-2); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Oscar Legros</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Google Ads · Paid Media · AI Automation</span>
+    <h1>I run Google Ads that convert,<br>and build the automations around them.</h1>
+    <p class="lead">Account Strategist at a Google Partner, managing a portfolio of 150 small and mid-sized business accounts across e-commerce, real estate and services. On the side I build AI and automation tools in Python and n8n that find leads, audit tracking and remove repetitive work.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/oscarlegros" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#contact">Work with me</a>
+    </div>
+    <p class="langs">Based in <b>Barcelona, Spain</b> · Native in <b>French, Spanish, English and Catalan</b></p>
+
+    <div class="stats">
+      <div class="stat"><div class="n">150</div><div class="l">SMB ad accounts managed</div></div>
+      <div class="stat"><div class="n">−20%</div><div class="l">CPA, on budgets up to €1,000/day</div></div>
+      <div class="stat"><div class="n">+10%</div><div class="l">conversion rate improvement</div></div>
+      <div class="stat"><div class="n">30%</div><div class="l">faster account audits with AI</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="soft" id="services">
+  <div class="wrap">
+    <h2>What I can do for you</h2>
+    <p class="sub">Hands-on paid media work, plus the tracking and automation that make it measurable.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Google Ads management</h3>
+        <p>Search, Performance Max, Shopping, Display and YouTube. Smart Bidding, keyword and negative-keyword strategy, and ad copy A/B tests.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>Account audits</h3>
+        <p>Find wasted spend, structure problems and tracking gaps, and turn them into a clear, prioritized action plan.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Conversion tracking</h3>
+        <p>Setup and audits for the Google Ads tag, GA4, Google Tag Manager, Meta Pixel and Consent Mode.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>AI & workflow automation</h3>
+        <p>n8n workflows, Python scripts and LLM integrations (Claude, Gemini, ChatGPT) for reporting, lead handling and repetitive tasks.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧲</div>
+        <h3>Lead generation tools</h3>
+        <p>Custom agents that find and rank prospects from public data, with the evidence for why each one qualifies.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>Multilingual campaigns</h3>
+        <p>Native ad copy and client communication in French, Spanish, English and Catalan, with a focus on the French market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Tools I designed and built in 2026. The code is in private repositories; I'm happy to walk you through any of them on a call.</p>
+
+    <div class="projects">
+
+      <article class="project">
+        <div>
+          <h3>DScraper: Paid Media lead agent</h3>
+          <p class="tagline">Finds local businesses with missing or weak paid media, and explains why each one is a good lead.</p>
+          <ul>
+            <li>Scans a homepage for Google Ads, Meta, TikTok, LinkedIn and Microsoft ad tags.</li>
+            <li>Flags "weak paid media": ad tags with no conversion events, no Consent Mode, a single platform, no analytics or a weak landing page.</li>
+            <li>Scores higher when the site can turn clicks into calls (HTTPS, mobile-ready, phone, WhatsApp, form or booking).</li>
+            <li>Ranks every lead and exports the evidence to CSV and JSON.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Status</p><span class="status live">Working</span></div>
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Claude Code</span><span class="chip">Meta Ad Library API</span><span class="chip">OpenStreetMap</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>DScraper: Website lead finder</h3>
+          <p class="tagline">Turns map listings into a ranked list of businesses that need a better online presence.</p>
+          <ul>
+            <li>Covers 24 local-service categories, from dentists to roofers, with English, Spanish and French names.</li>
+            <li>Searches a city, a set of provinces, or all 52 provinces of Spain.</li>
+            <li>Detects outdated or dead websites, missing social profiles and missing online booking.</li>
+            <li>Uses public data only, respects rate limits, keeps an opt-out list and never contacts a lead. Long runs can be paused and resumed.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Status</p><span class="status live">Working</span></div>
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">OpenStreetMap / Overpass</span><span class="chip">Web scraping</span><span class="chip">GDPR-aware design</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>AutoEmployer: job search automation</h3>
+          <p class="tagline">An n8n workflow that finds remote jobs every morning, filters them with AI and tailors a CV for each match.</p>
+          <ul>
+            <li>Pulls offers from 6 sources (Himalayas, Jobicy, Remotive, RemoteOK, We Work Remotely and JSearch) into one common format.</li>
+            <li>Cleans and de-duplicates them: in one tested run, 185 raw offers became 21 recent, unique ones.</li>
+            <li>Filters with rules plus an LLM evaluation (Gemini) using structured JSON output.</li>
+            <li>Generates a tailored CV through the Google Docs and Drive APIs, exported to PDF and sent for approval by email.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Status</p><span class="status wip">Phases 1–3 tested · 4–5 in progress</span></div>
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">n8n</span><span class="chip">Gemini</span><span class="chip">REST APIs</span><span class="chip">Google Docs / Drive</span><span class="chip">JSON schemas</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>AI phone receptionist</h3>
+          <p class="tagline">A voice agent that answers a business's calls in Spanish, books appointments and captures leads.</p>
+          <ul>
+            <li>Speech-to-text, an LLM and a natural voice, connected to n8n webhooks.</li>
+            <li>Books into Google Calendar, logs every call to Google Sheets, sends alerts and can transfer to a human.</li>
+            <li>Every call ends with one clear outcome: booked, lead captured, transferred or out of scope.</li>
+            <li>One config file per client, so a new business can be set up in under an hour.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Status</p><span class="status wip">In development</span></div>
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">Vapi</span><span class="chip">ElevenLabs</span><span class="chip">Deepgram</span><span class="chip">n8n</span><span class="chip">Google Calendar</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>UGC Lead Agent</h3>
+          <p class="tagline">Researches brands that hire UGC creators and drafts a personal outreach email for each one.</p>
+          <ul>
+            <li>Discovers brands in chosen niches and finds their published contact emails.</li>
+            <li>Scores each brand from 0 to 100 and writes a tailored outreach draft.</li>
+            <li>Never sends anything: a person reviews and sends every message.</li>
+            <li>Prints the cost of every run and stops at a set spending cap.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Status</p><span class="status live">Working</span></div>
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Claude API</span><span class="chip">Tavily</span><span class="chip">CSV pipeline</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>AI visual and video content</h3>
+          <p class="tagline">AI-generated images and short videos for AI influencer accounts.</p>
+          <ul>
+            <li>Image generation with Nano Banana and video generation with Veo 3.</li>
+            <li>Prompt design for consistent characters and styles across posts.</li>
+          </ul>
+        </div>
+        <div class="meta">
+          <div class="block"><p class="k">Built with</p>
+            <div class="chips"><span class="chip">Nano Banana</span><span class="chip">Veo 3</span><span class="chip">Prompt engineering</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="sub">Paid media, B2B sales and marketing, in Barcelona.</p>
+    <div class="timeline">
+      <div class="job">
+        <div class="when">Jun 2024 – Present</div>
+        <div>
+          <h3>Account Strategist Consultant, Google Ads · Google Partner</h3>
+          <p>Manage 150 SMB advertiser accounts and about 25 client calls a week in four languages. Improved conversion rates by 5–10% across the portfolio, cut CPA by 20% on budgets up to €1,000/day, raised CTR by 5% with keyword and ad copy testing, and hit the last 4 quarterly targets.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Jan 2024 – Apr 2024</div>
+        <div>
+          <h3>Account Executive Intern · Harbest Market</h3>
+          <p>Food-supply start-up. Prospected 150 restaurants a week, managed the HubSpot pipeline to signed contract and negotiated pricing at a 10% gross margin. New client sign-ups doubled month over month.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Mar 2023 – Jun 2023</div>
+        <div>
+          <h3>Marketing & Sales Assistant · MasiFill Patrimonia</h3>
+          <p>Real estate. Designed social campaigns on Instagram, Facebook, LinkedIn and TikTok and supported market analysis. Apartment sales rose 15%.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Jun 2022 – Dec 2022</div>
+        <div>
+          <h3>Founder · Yaos Online Shop</h3>
+          <p>Ran my own e-commerce store: marketing, product sourcing, inventory, customer service and data-driven adjustments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Tools & education</h2>
+    <p class="sub">What I use day to day.</p>
+    <div class="skills">
+      <div class="card">
+        <h3>Paid media & analytics</h3>
+        <div class="chips"><span class="chip">Google Ads</span><span class="chip">Performance Max</span><span class="chip">Shopping</span><span class="chip">YouTube Ads</span><span class="chip">Smart Bidding</span><span class="chip">GA4</span><span class="chip">Google Tag Manager</span><span class="chip">Meta Pixel</span><span class="chip">Meta Ad Library</span></div>
+      </div>
+      <div class="card">
+        <h3>Automation & AI</h3>
+        <div class="chips"><span class="chip">n8n</span><span class="chip">Python</span><span class="chip">Claude Code</span><span class="chip">Claude / Gemini / ChatGPT APIs</span><span class="chip">Prompt engineering</span><span class="chip">REST APIs</span><span class="chip">JSON</span><span class="chip">Web scraping</span></div>
+      </div>
+      <div class="card">
+        <h3>Sales & CRM</h3>
+        <div class="chips"><span class="chip">HubSpot</span><span class="chip">B2B prospecting</span><span class="chip">Account management</span><span class="chip">Negotiation</span><span class="chip">Google Workspace</span><span class="chip">Microsoft Office</span></div>
+      </div>
+      <div class="card">
+        <h3>Education & certifications</h3>
+        <p style="margin:0;color:var(--ink-2);font-size:15px">BBA in Business Management & Technology, La Salle Bonanova (Ramon Llull University) · Exchange at IESEG, Paris · Expert Course in Generative AI, Automation & SaaS, UDIA - ESIC (in progress) · Google Ads certifications · Google Activate: E-commerce</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft contact" id="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p class="sub" style="margin:0 auto 28px">Need help with Google Ads, conversion tracking or an automation? Send me a message on LinkedIn.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.linkedin.com/in/oscarlegros" target="_blank" rel="noopener">Message me on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Oscar Legros Borguñó · Barcelona</div>
+</footer>
+
+</body>
+</html>
